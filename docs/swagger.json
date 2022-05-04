@@ -1,0 +1,51 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "The APIs of BE task",
+        "title": "jumia BE task",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/customers/all": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve all customers based on country and state filter",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/transformers.CustomerResponseRow"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "transformers.CustomerResponseRow": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+basePath: /
+definitions:
+  transformers.CustomerResponseRow:
+    properties:
+      country:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+      state:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: The APIs of BE task
+  termsOfService: http://swagger.io/terms/
+  title: jumia BE task
+  version: "1.0"
+paths:
+  /customers/all:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/transformers.CustomerResponseRow'
+      summary: Retrieve all customers based on country and state filter
+swagger: "2.0"
