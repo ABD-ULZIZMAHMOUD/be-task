@@ -33,6 +33,7 @@ attribute not return to response
 
 # Run Test Cases
 ```
+  copy env file into /test/.env
   cmd  cd test 
   cmd go test 
 ```
@@ -54,14 +55,14 @@ attribute not return to response
 ```
 copy env to .env 
 cmd docker build -t be-task -f scrpits/be.dockerfile .
-cmd docker run  -p 8000:8000  be-test 
+cmd docker run  -p 8000:8000  be-task 
 open localhost:8000/swagger/index.html
 ```
 
 # Run Docker for FE
 ```
 cmd docker build -t fe-task -f scrpits/fe.dockerfile .
-cmd docker run  -p 3000:3000  be-test 
+cmd docker run  -p 3000:3000  fe-task 
 open localhost:3000 
 
 ```
