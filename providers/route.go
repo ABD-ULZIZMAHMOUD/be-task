@@ -15,6 +15,7 @@ func Routing(r *gin.Engine) *gin.Engine {
 	return r
 }
 
+//add route to swagger
 func swaggerRouting(r *gin.Engine) {
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }

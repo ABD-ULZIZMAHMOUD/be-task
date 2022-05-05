@@ -52,6 +52,7 @@ attribute not return to response
 
 # Run Docker for BE 
 ```
+copy env to .env 
 cmd docker build -t be-task -f scrpits/be.dockerfile .
 cmd docker run  -p 8000:8000  be-test 
 open localhost:8000/swagger/index.html
@@ -67,8 +68,16 @@ open localhost:3000
 
 # Run Docker for task 
 ```
+copy env to .env 
 cmd docker compose build 
-cmd codker compose run be-task
-cmd codker compose run fe-task
+cmd codker compose up
 open localhost:3000 
+```
+
+#about task 
+```
+we can add column country to customer and loop in rows and set country this will increase query perfomance 
+and filter will be better 
+
+but i make solution based on table you send 
 ```

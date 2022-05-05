@@ -12,13 +12,12 @@ func Run() {
 	 */
 	r := Gin()
 	/**
-	* setup routes with three default groups
-	* admin / auth / visitors
+	* setup routes with default group
 	 */
 	Routing(r)
 	/**
 	* start app on port to change port just edit APP_PORT in
-	* env file like :9090
+	* env file like :8000
 	 */
 	if os.Getenv("APP_ENV") == "local" {
 		err := r.Run(":" + os.Getenv("APP_PORT_LOCAL"))

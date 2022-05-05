@@ -12,7 +12,10 @@ import (
 // @termsOfService http://swagger.io/terms/
 // @BasePath /
 func main() {
+	//connect to database
 	providers.InitDatabase()
+	//load countries to memory
 	helpers.LoadCountries()
+	//run gin server
 	providers.Run()
 }

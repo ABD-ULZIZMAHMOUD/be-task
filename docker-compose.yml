@@ -1,16 +1,5 @@
 version: "3.8"
 services:
-  fe-task:
-    build:
-      context: ./
-      dockerfile: scrpits/fe.dockerfile
-    volumes:
-      - .:/app
-    ports:
-      - 3000:3000
-    image: app:fe-task
-    container_name: fe_container
-    command: npm start
   be-task:
     build:
       context: ./
@@ -22,3 +11,14 @@ services:
     image: app:be-task
     container_name: be_container
     command: go run main.go
+  fe-task:
+    build:
+      context: ./
+      dockerfile: scrpits/fe.dockerfile
+    volumes:
+      - .:/fe-task
+    ports:
+      - 3000:3000
+    image: app:fe-task
+    container_name: fe_container
+    command: npm start

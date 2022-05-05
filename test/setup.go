@@ -2,6 +2,7 @@ package test
 
 import (
 	"be-task/config"
+	"be-task/helpers"
 	"be-task/providers"
 	"bytes"
 	"encoding/json"
@@ -30,6 +31,8 @@ func setupRouter() *gin.Engine {
 	if !IsSetup {
 		// connect database
 		config.ConnectToDatabase()
+		//get countries from memory
+		helpers.LoadCountries()
 		/// start gin
 		Router = providers.Gin()
 		IsSetup = true
